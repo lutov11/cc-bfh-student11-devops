@@ -1,1 +1,2 @@
-# cc-bfh-student11-devops
+# cc-bfh-student11-
+Members: Valeriia Lutoshkyna, Axelle Carnot
