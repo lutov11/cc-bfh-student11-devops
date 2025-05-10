@@ -1,0 +1,24 @@
+name: Pre-Commit Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Install TFLint
+        run: |
+          curl -s 
+https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+      - uses: pre-commit/action@v3.0.0
+
