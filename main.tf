@@ -2,7 +2,14 @@ provider "aws" {
   region  = "eu-central-1"
 }
 
+resource "aws_s3_bucket" "test" {
+  bucket = "test-bfh-cc-s11"
 
+  tags = {
+    Owner   = "student11"
+    Project = "iac-lab"
+  }
+}
 
 
 resource "aws_s3_bucket" "result_bucket" {
